@@ -12,14 +12,40 @@ body {
     margin: 0;
 }
 
+.container.show-nav+nav li {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
 .content img {
     max-width: 100%;
     border-radius: 25px;
 }
 
-ul {
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+nav ul {
     list-style-type: none;
+    padding-left: 30px;
+    padding-right: 15px;
+}
+
+nav ul li {
+    text-transform: uppercase;
     color: white;
+    margin: 40px 0;
+    transform: translateX(-115%);
+    transition: transform 0.4s ease-in;
+}
+
+nav ul li i {
+    font-size: 20px;
+    margin-right: 10px;
 }
 
 .container {
@@ -28,11 +54,19 @@ ul {
     transition: transform 0.5s linear;
     width: 100vw;
     min-height: 100vh;
-    padding: 150px;
+    padding: 100px;
 }
 
 .container.show-nav {
     transform: rotate(-20deg);
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+
+.container.show-nav .circle {
+    transform: rotate(-90deg);
 }
 
 .circle-container {
@@ -76,4 +110,26 @@ ul {
     top: 60%;
     transform: rotate(90deg);
     transform-origin: top left;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.content h1 {
+    margin: 0;
+}
+
+.content small {
+    color: #555;
+    font-style: italic;
+}
+
+.content p {
+    color: #333;
+    line-height: 1.5;
+    text-indent: 5rem;
+    text-align: justify;
+    text-justify: inter-word;
 }
